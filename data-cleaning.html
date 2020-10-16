@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fake news detection</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="html2canvas.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light mb-4 purple">
+        <a class="navbar-brand text-white" href="#">Demo</a>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	        <ul class="navbar-nav mr-auto">
+	            <li class="nav-item active">
+	                <a class="nav-link whiteText70" href="home.html">Home <span class="sr-only">(current)</span></a>
+	            </li>
+                <li class="nav-item dropdown">
+	                <a class="nav-link dropdown-toggle whiteText70" id="btnGroupDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dataset</a>
+	                <div class="dropdown-menu dropdown-primary" aria-labelledby="btnGroupDrop1">
+						<a class="dropdown-item" href="/input/FakeNewsDataset.csv" download>Dataset</a>
+						<a class="dropdown-item" href="/input/miniDataset.xlsx" download="">Mini dataset</a>
+						<a class="dropdown-item" href="/GloVe/glove.twitter.27B.200d.txt" download>Pre-trained mode GloVe</a>
+	                </div>
+	            </li>
+
+				<div class="btn-toolbar alignmentButton" role="toolbar" aria-label="Toolbar with button groups">
+					<div class="btn-group mr-2" role="group" aria-label="First group">
+						<button type="button" class="btn btn-outline-light alignmentButton" data-toggle="modal" data-target="#exampleModal">Screenshot</button>
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Screenshot saved</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										Click to view your screenshot!
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Delete</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_screenshoot">Save</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btn-group mr-2" role="group" aria-label="Second group">
+						<button type="button" class="btn btn-outline-light alignmentButton" onclick="window.location.href = 'home.html';">Return</button>
+					</div>
+				</div>
+	    	</ul>
+	  	</div>
+	</nav>
+
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="home.html"  class="greyText">Home</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Data cleaning</li>
+	  </ol>
+	</nav>
+	<div class="card mycard" id="need_save">
+  		<div class="card-header">
+    		After cleaning
+  		</div>
+  		<div class="card-body">
+	        <label for="exampleFormControlInput1">Title</label>
+			<input type="text" id="exampleFormControlInput1" class="form-control" name="final_title" readonly="readonly">
+			<button type = "submit" class="btn btn-outline-primary smallPurpleButton" name="show_orginal_title">Show orginal title</button><br>
+	        <label for="exampleFormControlTextarea1">Content</label>
+	        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" name="final_content" readonly="readonly"></textarea>
+			<button type = "submit" class="btn btn-outline-primary smallPurpleButton" name="show_orginal_content">Show orginal content</button>
+  		</div>
+		<div class="form-group centerButton" style="margin-top: -50px">
+			<button type="button" class="btn btn-outline-primary myButton" name="show_the_truth" data-toggle="modal" data-target="#resultModal">See the truth !!!</button>
+			<div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Detection's result</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<img name="icon_result">
+							<h3 name="show_result"></h3>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="window.location.href = 'home.html';">Return home</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="data-cleaning.js"></script>
+</body>
+
+
+<footer class="page-footer font-small purple pt-4 text-white">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase biggerFont">UNIVERSITY ITMO</h5>
+        <p>IT's MOre than a university!</p>
+      </div>
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Information</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>Luu Tran Thi Thien Huong</p>
+          </li>
+          <li>
+            <p>N3455</p>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Contact</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://vk.com/thienhuong" class="whiteText70">VKontakte</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/lv.luu.7/" class="whiteText70">Facebook</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+</footer>

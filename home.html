@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fake news detection</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="all.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light mb-4 purple">
+        <a class="navbar-brand text-white" href="#">Demo</a>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	        <ul class="navbar-nav mr-auto">
+	            <li class="nav-item active">
+	                <a class="nav-link whiteText70" href="home.html">Home <span class="sr-only">(current)</span></a>
+	            </li>
+                <li class="nav-item dropdown">
+	                <a class="nav-link dropdown-toggle whiteText70" id="btnGroupDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dataset</a>
+	                <div class="dropdown-menu dropdown-primary" aria-labelledby="btnGroupDrop1">
+						<a class="dropdown-item" href="/input/FakeNewsDataset.csv" download>Dataset</a>
+						<a class="dropdown-item" href="/input/miniDataset.xlsx" download="">Mini dataset</a>
+						<a class="dropdown-item" href="/GloVe/glove.twitter.27B.200d.txt" download>Pre-trained mode GloVe</a>
+	                </div>
+	            </li>
+	        </ul>
+	    </div>
+	</nav>
+	<form class="centerForm">
+        <div class="form-group quotes">
+            <h1>"Don't trust everything you see,</h1>
+            <h1>Even salt looks like sugar!"</h1>
+	    </div>
+	    <div class="form-group" style="margin-bottom: 35px">
+	        <label for="exampleFormControlInput1">Title</label>
+	        <input type="text" id="exampleFormControlInput1" class="form-control" placeholder="Title of the news." name="title">
+	    </div>
+	    <div class="form-group" style="margin-bottom: 35px">
+            <label for="exampleFormControlTextarea1">Content</label>
+	        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Write the content of the news you want to test." name="content"></textarea>
+	    </div>
+	    <div class="form-group centerButton">
+	    	<button type="button" class="btn btn-outline-primary myButton">Clear the text now !!!</button>
+	    </div>
+    </form>
+    <script src="home.js"></script>
+</body>
+
+<footer class="page-footer font-small purple pt-4 text-white">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+                <h5 class="text-uppercase biggerFont">UNIVERSITY ITMO</h5>
+                <p>IT's MOre than a university!</p>
+            </div>
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Information</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Luu Tran Thi Thien Huong</p>
+                    </li>
+                    <li>
+                        <p>N3455</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Contact</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://vk.com/thienhuong" class="whiteText70">VKontakte</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/lv.luu.7/" class="whiteText70">Facebook</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+</footer>

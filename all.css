@@ -1,0 +1,144 @@
+.purple {
+	background-color: rgb(206, 147, 216);
+}
+
+.whiteText {
+	color: white !important;
+}
+
+.whiteText70 {
+	color: white !important;
+	opacity: 0.7;
+}
+
+.biggerFont {
+	font-size: 25px;
+}
+
+.centerForm {
+	clear: both;
+	margin-top: 65px;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-bottom: 88px;
+}
+
+.centerButton {
+	text-align: center;
+}
+
+.quotes {
+	text-align: right;
+	font-style: italic;
+	font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.form-group label {
+	font-size: 20px;
+}
+.quotes h1 {
+	font-size: 30px;
+}
+
+#exampleFormControlInput1 {
+	background-color: white !important;
+}
+.myButton {
+	display: inline-block;
+   	font-size: 20px;
+   	border-color: rgb(206, 147, 216);
+   	border-width: 2px;
+   	color: rgb(206, 147, 216);
+	margin-top: 18px;
+}
+
+.myButton:hover, .smallPurpleButton:hover {
+   	background-color: rgb(206, 147, 216) !important;
+   	border-color: rgb(206, 147, 216) !important;
+	color: white;
+}
+
+.myButton:focus, .smallPurpleButton:focus {
+   border-color: rgb(206, 147, 216) !important;
+   box-shadow: 0 0 0 .2rem rgba(206, 147, 216, 0.5) !important;
+}
+
+#exampleFormControlTextarea1 {
+	background-color: white !important;
+}
+.smallInput {
+	width: 250px !important;
+	margin-left: 20px;
+}
+.row {
+	margin-left:-15px;
+	margin-bottom: 30px;
+}
+.smallPurpleButton {
+	display: inline-block;
+	font-size: 15px;
+	border-color: rgb(206, 147, 216);
+	border-width: 2px;
+	color: rgb(206, 147, 216);
+	margin-top: 10px;
+	margin-bottom: 5px;
+	width: 300px !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+.form-control {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+}
+.smallForm {
+	width: 190px !important;
+	margin-top: 10px;
+}
+.card-header {
+	background-color: rgb(206, 147, 216);
+	color: white;
+	text-align: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+
+}
+.greyText{
+	color: grey;
+}
+.alignmentButton{
+	position: absolute;
+	right: 0px;
+}
+.mycard {
+	width: 1700px;
+	margin-top: 42px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}
+.card-header {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+}
+.card-body {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.py-3 a {
+	color: white;
+}
+
+.form-group label {
+	font-size: 20px;
+}
+.footer-copyright {
+	margin-top: -30px !important;
+}
